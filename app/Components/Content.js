@@ -10,10 +10,10 @@ module.exports = React.createClass({
   refreshData: function() {
   	// replace this with your favourite library for doing ajax calls
   	var xhr = new XMLHttpRequest();
-    xhr.open('get', '/api/currentTime', true);
+    xhr.open('get', 'https://destomorrow.cloudant.com/rangers/jason', true);
     xhr.onload = () => {
       var data = JSON.parse(xhr.responseText);
-      this.setState({ serverData: data.time });
+      this.setState({ serverData: data });
     };
     xhr.send();
   },
@@ -21,8 +21,14 @@ module.exports = React.createClass({
   render: function () {
     return (
     <div>
-    <p>Here is some Content <b ref='serverResponse'>{ this.state.serverData || 'Click the button to hit the API' }</b></p>
-    <input ref='refreshButton' type='button' onClick={this.refreshData } value='Hit the server'></input>
+      <img src="{this.state.data.Headshot_Url}" style="width:50%" />
+      <table style="width:50%">
+        <tr>
+          <td>Ranger Name: {this.state.data.Name}</td>
+          <td>Ranger Color: {this.state.data.Ranger_Color}</td> 
+          <td>Season: {this.state.data.Season}</td>
+        </tr>
+      </table>
     </div>
 	);
   }
