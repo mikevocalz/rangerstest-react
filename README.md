@@ -20,7 +20,7 @@ I've put together this simple webpack starter example with the following feature
 Clone the repository:
 
 ```sh
-git clone git@github.com:cgreening/simple-webpack-react-starter.git
+git clone https://github.com/mikevocalz/rangerstest-react.git
 cd simple-webpack-react-starter
 npm install
 npm run dev
