@@ -21,16 +21,7 @@ Clone the repository:
 
 ```sh
 git clone https://github.com/mikevocalz/rangerstest-react.git
-cd simple-webpack-react-starter
-npm install
-npm run dev
-Browse to http://localhost:8080
-```
-If you just want to start a new project without all the commit history then do:
-
-```sh
-git clone --depth=1 git@github.com:cgreening/simple-webpack-react-starter <your-project-name>
-cd <your-project-name>
+cd rangerstest-react
 npm install
 npm run dev
 Browse to http://localhost:8080
