@@ -4,25 +4,38 @@ module.exports = React.createClass({
   displayName: 'Content',
 
   getInitialState: function() {
-  	return { serverData: null };
+  	return { data: {} };
   },
 
-  refreshData: function() {
+  componentDidMount: function() {
   	// replace this with your favourite library for doing ajax calls
   	var xhr = new XMLHttpRequest();
     xhr.open('get', 'https://destomorrow.cloudant.com/rangers/jason', true);
     xhr.onload = () => {
       var data = JSON.parse(xhr.responseText);
-      this.setState({ serverData: data });
+      console.log(data);
+      this.setState({ data: data });
+    };
+    xhr.send();
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    var person = nextProps.ranger
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'https://destomorrow.cloudant.com/rangers/' + person, true);
+    xhr.onload = () => {
+      var data = JSON.parse(xhr.responseText);
+      console.log(data);
+      this.setState({ data: data });
     };
     xhr.send();
   },
 
   render: function () {
     return (
-    <div>
-      <img src="{this.state.data.Headshot_Url}" style="width:50%" />
-      <table style="width:50%">
+    <div className="ranger-container">
+      <img src={this.state.data.Headshot_Url} className="ranger-image" />
+      <table >
         <tr>
           <td>Ranger Name: {this.state.data.Name}</td>
           <td>Ranger Color: {this.state.data.Ranger_Color}</td> 
