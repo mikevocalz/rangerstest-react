@@ -14,15 +14,26 @@ module.exports = React.createClass({
   	return {ranger:"jason"}
   },
 
+  componentDidMount: function(){
+    this.getRanger(this.state.ranger);
+  },
 
-  getRanger: function(ranger){
-  	this.setState({ranger})
+  getRanger: function(ranger) {
+    // replace this with your favourite library for doing ajax calls
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'https://destomorrow.cloudant.com/rangers/' + ranger , true);
+    xhr.onload = () => {
+      var data = JSON.parse(xhr.responseText);
+      console.log(data);
+      this.setState({ ranger: data });
+    };
+    xhr.send();
   },
 
   render: function () {
     return (<div>
               <Header/>
-              <Menu getRanger={(ranger) => this.getRanger(ranger)} />
+              <Menu get_Ranger={this.getRanger} />
               <Content ranger={this.state.ranger} />
               <Favicon url={ faviconUrl }/>
             </div>)
