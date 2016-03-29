@@ -3,7 +3,6 @@ var React = require('react');
 module.exports = React.createClass({
   displayName: 'Content',
 
-
   render: function () {
     var color = this.props.ranger.Ranger_Color[0]
     

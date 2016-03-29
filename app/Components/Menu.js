@@ -14,6 +14,7 @@ module.exports = React.createClass({
         <li onClick={() => this.getRanger("jason")} >Jason</li>
         <li onClick={() => this.getRanger("billy")} >Billy</li>
         <li onClick={() => this.getRanger("zack")} >Zack</li>
+        <li onClick={() => this.getRanger("zach")} >Zack</li>
         <li onClick={() => this.getRanger("trini")} >Trini</li>
         <li onClick={() => this.getRanger("kimberly")} >Kimberly</li>
         <li onClick={() => this.getRanger("tommy")} >Tommy</li>
@@ -22,4 +23,5 @@ module.exports = React.createClass({
   );
   }
 
+});
 });
