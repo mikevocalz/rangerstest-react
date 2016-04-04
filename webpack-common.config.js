@@ -39,8 +39,4 @@ module.exports = {
                           filename: 'index.html',
                           template: './app/index_template.html'
                         })
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f2ce4b837d40a5b03473bb82ea9eaa797a72c89c

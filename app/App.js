@@ -5,9 +5,7 @@ var Menu = require('./Components/Menu');
 var Content = require('./Components/Content');
 var Footer = require('./Components/Footer');
 var Favicon = require('react-favicon');
-var Content = require('./Components/Content');
-var Favicon = require('react-favicon');
-var Menu = require('./Components/Menu');
+
 
 var faviconUrl = require('./Assets/favicon.ico');
 
@@ -19,18 +17,13 @@ module.exports = React.createClass({
           ranger:{
               Ranger_Color: [],
               Headshot_Url: {},
-              Bio: {}
+              Bio: []
           }
       }
   },
 
   componentDidMount: function(){
     this.getRanger("tommy");
-  	return {ranger:"jason"}
-  },
-
-  componentDidMount: function(){
-    this.getRanger(this.state.ranger);
   },
 
   getRanger: function(ranger) {
@@ -44,7 +37,11 @@ module.exports = React.createClass({
     };
     xhr.send();
   },
+//test start
 
+
+
+//test end
   render: function () {
     return (<div>
               <Header/>

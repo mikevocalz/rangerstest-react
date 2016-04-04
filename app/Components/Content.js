@@ -8,12 +8,12 @@ module.exports = React.createClass({
     
     return (
     <div className="ranger-container">
+      <a><h1>{this.props.ranger.Name}</h1></a>
       <img src={this.props.ranger.Headshot_Url[color]} className="ranger-image" />
         <ul className="ranger-info">
-          <li>Ranger Name: {this.props.ranger.Name}</li>
+          <li>Full Name: {this.props.ranger.Full_Name}</li>
           <li>Ranger Color: {this.props.ranger.Ranger_Color}</li> 
           <li>Season: {this.props.ranger.Season}</li>
-          <li>Full Name: {this.props.ranger.Full_Name}</li>
           <li>Actor: {this.props.ranger.Actor}</li>
           <li>Weapons: {this.props.ranger.Weapons}</li>
           <li>Gear: {this.props.ranger.Gear}</li>

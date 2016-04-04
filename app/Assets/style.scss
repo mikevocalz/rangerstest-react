@@ -4,27 +4,57 @@
 	box-sizing: border-box;
 }
 
-body {
+html, body {
+    flex: 1;
+	flex-direction: column;
+	align-items: center;
+    margin:0px auto;
+    background-color: #e1e1e1;
 	font-family: 'Roboto', sans-serif;
+    height: 100%;
+    min-height: 100%;
 }
 
 .app {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
+    justify-content: center;
+
 }
 
 .header {
+    margin:0px auto;
 	flex-wrap: nowrap;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
 	width: 100%;
+    height: 75px;
   	justify-content: center;
-  	border-bottom: 1px solid #e1e1e1;
-  	background-color: #fAfAfA;
+   	align-items: center;
+  	border-bottom: 2px solid white;
+  	background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.footer {
+	display: flex;
+    padding-top: 20px;
+	padding-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    min-height: 10vh;
+    flex-direction: column;
+    background-color: red;
+    max-height: 10vh;
+    margin-bottom: 0px;
+    border-top: 1px solid #e1e1e1;
+
+}
+.footer-content {
+  flex: 1;
 }
 
 .ranger-image {
@@ -32,5 +62,152 @@ body {
 }
 
 .ranger-container {
-	width: 50%;
+    border-radius: 25px;
+	width: 60%;
+    height: 1400px;
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+    color: black;
+    cursor: none;
+    margin: -200px auto 100px auto;
+
+}
+p {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+.left-container {
+	margin:0px 0px 0px 5px;
+	padding-top: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	width: 200px;
+    height: 300px;
+    min-height: 100%;
+  	justify-content: left;
+  	background-color: lightgrey;
+    text-align: left;
+    display: flex;
+    cursor: pointer;
+}
+
+.left-container + li:hover {
+    background-color: yellow;
+}
+
+li {
+    list-style-type: none;
+    font-weight: 900;
+    cursor: pointer;
+    line-height: 1.8;
+}
+
+ li:hover {
+    color: darkgray;
+}
+ 
+.menu-img {
+position:absolute;
+left:0;
+right:0;
+top:0;
+bottom:0;
+margin:0;
+background: darkred;
+width: 70px;
+height: 73px;
+padding: 5px 5px 5px 5px;
+ }
+
+.settings-img {
+position: absolute;
+right: 0px;
+top: 0;
+background: darkred;
+width: 70px;
+height: 73px;
+padding: 5px 0px 5px 0px;
+ }
+
+
+.ranger-info{
+    list-style-type: none;
+    color: black;
+    font-weight: 900;
+    line-height: 1.8;
+    cursor: none;
+}
+
+.pru-logo {
+    margin: -10px 10px auto 560px;
+    position:absolute;
+    padding: 5px 5px 20px 0px;
+    height: 165px;
+    background-color:  black;
+}
+
+//test
+.transform {
+  position: relative;
+  
+  aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 14rem;
+  }
+  
+  article {
+    position: absolute;
+    top: 0;
+    left: 4rem;
+    bottom: 0;
+    width: calc(100% - 4rem);
+    transform: translate3d(0, 0, 0);
+    transition: transform .25s ease-in-out;
+  }
+  
+  &.expanded article {
+    transform: translate3d(10rem, 0, 0);
+  }
+}
+
+.flex {
+  display: flex;
+  flex-flow: row nowrap;
+  
+  aside {
+    flex: 0 0 4rem;
+    transition: flex-basis .25s ease-in-out;
+  }
+  
+  article {
+    flex: 1;
+  }
+  
+  &.expanded aside {
+    flex-basis: 14rem;
+  }
+}
+
+.width {
+  
+  aside {
+    width: 4rem;
+    transition: width .25s ease-in-out;
+  }
+  
+  aside,
+  article {
+    float: left;
+  }
+  
+  &.expanded aside {
+    width: 14rem;
+  }
+
 }
